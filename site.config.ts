@@ -29,6 +29,9 @@ export default siteConfig({
   defaultPageCover: null,
   defaultPageCoverPosition: 0.5,
 
+  // Optional utteranc.es comments via GitHub issue comments
+  commentsGitHubRepo: 'Asilvorcarp/BlogComments',
+
   // whether or not to enable support for LQIP preview images (optional)
   isPreviewImageSupportEnabled: true,
 
