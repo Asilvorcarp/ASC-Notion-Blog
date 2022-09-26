@@ -216,14 +216,37 @@
 
 
 .utterances {
-    margin-top: 2em;
-    width: 100%;
+  margin-top: 2em;
+  width: 100%;
 }
 
 @media only screen and (min-width: 567px) {
-    .utterances {
-        width: calc(100% + 60px);
-        position: relative;
-        left: -60px;
-    }
+  .utterances {
+      width: calc(100% + 60px);
+      position: relative;
+      left: -60px;
+  }
+}
+
+
+.notion-secret {
+  display: flex;
+  flex-direction: column;
+}
+
+.notion-secret input {
+  width: 45%;
+  color: rgb(128, 128, 128);
+  margin-right: 0.5em;
+  font-family: inherit;
+  outline: 0;
+  border: 0;
+  border-bottom: 2px solid #9b9b9b;
+  background: transparent;
+  padding-bottom: 6px;  
+  font-weight: 700;
+  border-width: 3px;
+  border-image: linear-gradient(to right, #11998e, #38ef7d);
+  border-image-slice: 1;
+  transition: border-color 0.2s;
 }

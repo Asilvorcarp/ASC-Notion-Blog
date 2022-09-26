@@ -32,6 +32,7 @@ import { NotionPageHeader } from './NotionPageHeader'
 import { GitHubShareButton } from './GitHubShareButton'
 // import { ReactUtterances } from './PageComments'
 import { ReactGiscus } from './PageComments'
+import { MyCallout } from './MyCallout'
 
 import styles from './styles.module.css'
 
@@ -165,13 +166,14 @@ export const NotionPage: React.FC<types.PageProps> = ({
       Code,
       Collection,
       Equation,
+      Callout: MyCallout, // my callout that supports encrypt
       Pdf,
       Modal,
       Tweet,
       Header: NotionPageHeader,
       propertyLastEditedTimeValue,
       propertyTextValue,
-      propertyDateValue
+      propertyDateValue,
     }),
     []
   )
