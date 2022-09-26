@@ -1,8 +1,35 @@
 import React from 'react'
-
 import styles from './styles.module.css'
+import Giscus from '@giscus/react';
+import type {Repo, Theme} from '@giscus/react/dist/types';
 
-export type MappingType =
+
+// ------------------------ Giscus -------------------------------
+
+export function ReactGiscus(repo: Repo, theme: Theme) {
+	return (
+		<Giscus
+			id="comments"
+			repo={repo}
+			repoId="R_kgDOGTCHng"
+			category="Comments" // my category // TODO: allow customize
+			categoryId="DIC_kwDOGTCHns4CP_vQ"
+			mapping="title"
+			term="Welcome to giscus!"
+			reactionsEnabled="1"
+			emitMetadata="1"
+			inputPosition="bottom"
+			theme={theme}
+			lang="zh-CN"
+			loading="lazy"
+		/>
+	);
+}
+
+
+// ------------------------ Utterances -------------------------------
+
+export type UttMappingType =
   | 'pathname'
   | 'url'
   | 'title'
@@ -10,7 +37,7 @@ export type MappingType =
   | 'issue-number'
   | 'issue-term'
 
-export type Theme =
+export type UttTheme =
   | 'github-light'
   | 'github-dark'
   | 'preferred-color-scheme'
@@ -21,11 +48,11 @@ export type Theme =
 
 interface ReactUtterancesProps {
   repo: string
-  issueMap: MappingType
+  issueMap: UttMappingType
   issueTerm?: string
   issueNumber?: number
   label?: string
-  theme: Theme
+  theme: UttTheme
 }
 
 interface ReactUtterancesState {

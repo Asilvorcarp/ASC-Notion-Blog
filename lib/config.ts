@@ -75,8 +75,8 @@ export const defaultPageCoverPosition: number = getSiteConfig(
   0.5
 )
 
-// Optional utteranc.es comments via GitHub issue comments
-export const commentsGitHubRepo: string | null = getSiteConfig(
+// Optional Giscus/Utterances comments via GitHub discussion/issue
+export const commentsGitHubRepo: `${string}/${string}` | null = getSiteConfig(
   'commentsGitHubRepo',
   null
 )

@@ -30,7 +30,8 @@ import { PageAside } from './PageAside'
 import { Footer } from './Footer'
 import { NotionPageHeader } from './NotionPageHeader'
 import { GitHubShareButton } from './GitHubShareButton'
-import { ReactUtterances } from './PageComments'
+// import { ReactUtterances } from './PageComments'
+import { ReactGiscus } from './PageComments'
 
 import styles from './styles.module.css'
 
@@ -205,16 +206,20 @@ export const NotionPage: React.FC<types.PageProps> = ({
     ),
     [block, recordMap, isBlogPost]
   )
-
+  
 	const comments = React.useMemo(
     () => ( 
-			isBlogPost && config.commentsGitHubRepo && 
-      <ReactUtterances
-				repo={config.commentsGitHubRepo}
-				issueMap='issue-term'
-				issueTerm='title'
-				theme={isDarkMode ? 'photon-dark' : 'github-light'}
-			/>
+        isBlogPost && config.commentsGitHubRepo && 
+      // <ReactUtterances
+			// 	repo={config.utterancesGitHubRepo}
+			// 	issueMap='issue-term'
+			// 	issueTerm='title'
+			// 	theme={isDarkMode ? 'photon-dark' : 'github-light'}
+			// />
+			ReactGiscus(
+				config.commentsGitHubRepo,
+				isDarkMode ? 'dark' : 'light'
+			)
     ),
     [isBlogPost, isDarkMode]
   )
